@@ -65,8 +65,10 @@ services:
 
   n8n:
     <<: *shared
-    ports:
-      - 5678:5678
+    #ports:
+    expose:
+      #- 5678:5678
+      - 5678
 
   n8n-worker:
     <<: *shared

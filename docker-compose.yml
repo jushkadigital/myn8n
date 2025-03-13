@@ -27,6 +27,8 @@ x-shared: &shared
     - NODE_ENV=${NODE_ENV_JOSUE}
     - WEBHOOK_URL=https://${SUBDOMAIN_JOSUE}.${DOMAIN_JOSUE}/ 
     - GENERIC_TIMEZONE=America/Argentina/Buenos_Aires
+    - N8N_PROXY_HOPS=1
+    
   links:
     - postgres
     - redis

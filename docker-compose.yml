@@ -21,7 +21,7 @@ x-shared: &shared
     - QUEUE_HEALTH_CHECK_ACTIVE=true
     - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY}
     - N8N_SECURE_COOKIE=false
-    - N8N_HOST=${SUBDOMAIN_JOSUE}.${DOMAIN_JOSUE}
+    - N8N_HOST=localhost
     - N8N_PORT=5678
     - N8N_PROTOCOL=https
     - NODE_ENV=${NODE_ENV_JOSUE}
@@ -71,8 +71,8 @@ services:
 
   n8n:
     <<: *shared
-    expose:
-      - 5678
+    ports:
+      - "5678:5678"
 
   n8n-worker:
     <<: *shared

@@ -21,6 +21,11 @@ x-shared: &shared
     - QUEUE_HEALTH_CHECK_ACTIVE=true
     - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY}
     - N8N_SECURE_COOKIE=false
+    - N8N_HOST=n8n
+    - N8N_PORT=5678
+    - N8N_PROTOCOL=http
+    - VUE_APP_URL_BASE_API=http://n8n.pdsviajes.com/
+    - GENERIC_TIMEZONE=America/Argentina/Buenos_Aires
   links:
     - postgres
     - redis
@@ -65,8 +70,6 @@ services:
 
   n8n:
     <<: *shared
-    expose:
-     - 5678
 
   n8n-worker:
     <<: *shared
